@@ -220,7 +220,8 @@ if __name__ == '__main__':
     for i in range(len(pivot_rows_cols)):
         if pivot_rows_cols[i] != -10:
             pivot_rows.append(pivot_rows_cols[i])
-            bars.append((big_f0.row_births[pivot_rows_cols[i]], big_f0.col_births[i]))
+            if big_f0.row_births[pivot_rows_cols[i]] < big_f0.col_births[i]: # This is to remove unimportant bars such as [1,1). 
+                bars.append((big_f0.row_births[pivot_rows_cols[i]], big_f0.col_births[i]))
     
     non_pivot_rows = list(set(list(range(big_f0.mat.shape[0]))) - set(pivot_rows))
     for i in non_pivot_rows:
