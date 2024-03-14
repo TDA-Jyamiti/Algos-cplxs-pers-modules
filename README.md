@@ -2,6 +2,8 @@
 
 This repository contains an implementation of the algorithms proposed in the paper (link).
 
+## Organization of the repository
+
 The repository is organized as follows:
 
 `compute_pres.py` contains an implentation of the algorithm PresPersMod as described in section 4 of the paper.
@@ -12,4 +14,23 @@ The repository is organized as follows:
 
 `main.py` contains an example for a persistent sheaf over a simplicial complex (Example 24 in the paper).
 
+## Dependencies
+
+1. numpy
+   
+2. scipy
+
 The code has been tested on `numpy 1.24.4` and `scipy 1.8.0`.
+
+## License
+
+THIS SOFTWARE IS PROVIDED "AS-IS". THERE IS NO WARRANTY OF ANY KIND. NEITHER THE AUTHORS NOR PURDUE UNIVERSITY WILL BE LIABLE FOR ANY DAMAGES OF ANY KIND, EVEN IF ADVISED OF SUCH POSSIBILITY.
+
+This software was developed (and is copyrighted by) the CGTDA research group at Purdue University. Please do not redistribute this software. This program is for academic research use only.
+
+## Citation
+
+The paper is accepted at SoCG 2024.
+
+
+
