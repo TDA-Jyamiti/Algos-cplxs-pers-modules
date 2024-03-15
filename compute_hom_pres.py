@@ -41,7 +41,7 @@ def fix_zero_cols_g0_f0(f0: MatrixWithBirthDeathIdcs,
 def read_off_bars(mat_r_d, col_degs, row_degs):
     bars = []
     for row in mat_r_d:
-        if len(mat_r_d) > 0:
+        if len(mat_r_d[row]) > 0:
             mat_r_d[row] = sorted(mat_r_d[row])
             if row_degs[row] < col_degs[mat_r_d[row][0]]: # The design of the algorithm is such that it can give bars [1,1) which are unimportant.
                 bars.append([row_degs[row], col_degs[mat_r_d[row][0]]])
