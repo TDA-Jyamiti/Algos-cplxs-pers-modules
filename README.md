@@ -12,7 +12,7 @@ The repository is organized as follows:
 
 `main.py` contains an example for a persistent sheaf over a simplicial complex (Example 24 in the paper).
 
-`main_graph.py` contains an example which has a persistent sheaf over a graph and computes the persistent sheaf cohomology. It also contains a way to generate filtration matrices.
+`main_graph.py` contains an example which has a persistent sheaf over a graph and computes the persistent sheaf cohomology. It also contains a way to generate a persistent sheaf.
 
 ## Dependencies
 
