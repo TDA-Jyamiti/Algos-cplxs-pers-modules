@@ -38,17 +38,6 @@ def fix_zero_cols_g0_f0(f0: MatrixWithBirthDeathIdcs,
     g0.mat = sp.csc_matrix(g0.mat.A % 2)
     return f0, g0
 
-def read_off_bars(mat_r_d, col_degs, row_degs):
-    bars = []
-    for row in mat_r_d:
-        if len(mat_r_d[row]) > 0:
-            mat_r_d[row] = sorted(mat_r_d[row])
-            if row_degs[row] < col_degs[mat_r_d[row][0]]: # The design of the algorithm is such that it can give bars [1,1) which are unimportant.
-                bars.append([row_degs[row], col_degs[mat_r_d[row][0]]])
-        else:
-            bars.append([row_degs[row], np.inf])
-    
-    return bars
 
 def get_bars_hom_cplx_pres(f0: MatrixWithBirthDeathIdcs, g0: MatrixWithBirthDeathIdcs):
     f0, g0 = fix_zero_cols_g0_f0(f0, g0)
