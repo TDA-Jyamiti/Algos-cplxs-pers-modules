@@ -274,6 +274,6 @@ if __name__ == '__main__':
     for i in non_pivot_rows:
         bars.append((big_f0.row_births[i], np.inf))
     
-    # print(bars)
+    print(bars)
     
     
