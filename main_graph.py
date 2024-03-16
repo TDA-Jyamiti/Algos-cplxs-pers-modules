@@ -204,7 +204,7 @@ if __name__ == '__main__':
     # np.random.seed(42)
 
     num_nodes = 20
-    max_dim_stalk = 4
+    max_dim_stalk = 7
     graph_edge_list = get_graph(num_nodes)
     filt_len = 500
     f0_list_u, f0_list_v, col_births_u, row_births_u, col_births_v, row_births_v, col_deaths_u, col_deaths_v, row_deaths_u, row_deaths_v = create_f0s(graph_edge_list, filt_len=filt_len, dim_mat=max_dim_stalk)
@@ -216,7 +216,7 @@ if __name__ == '__main__':
     n = 0
     for i in range(len(obj_u[0][0])):
         n += obj_u[0][0][i].shape[0]
-    print(f'Input size (summation n_i) is {n}')
+    print(f'Input size (summation n_i) is {n*filt_len}')
     
     obj2_u = Parallel(n_jobs=16, verbose=4)(delayed(compute_maps_betn_bars)(obj_u[j][0], obj_u[j][1], obj_u[j][2]) for j in range(len(obj_u)))
     obj2_v = Parallel(n_jobs=16, verbose=4)(delayed(compute_maps_betn_bars)(obj_v[j][0], obj_v[j][1], obj_v[j][2]) for j in range(len(obj_v)))
