@@ -264,7 +264,7 @@ if __name__ == '__main__':
     
     f0_reduced_d, _, pivot_rows_cols = col_redn(big_f0.mat)
     
-    bars = read_off_bars(f0_reduced_d, big_f0.col_births, big_f0.row_births, pivot_rows_cols)
+    bars = read_off_bars(big_f0.col_births, big_f0.row_births, pivot_rows_cols)
     
     print(bars)
     
