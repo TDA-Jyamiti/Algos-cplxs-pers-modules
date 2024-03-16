@@ -263,16 +263,8 @@ if __name__ == '__main__':
     big_f0.row_deaths = dict(enumerate(list(big_f0_row_deaths),0))
     
     f0_reduced_d, _, pivot_rows_cols = col_redn(big_f0.mat)
-    bars = []
-    pivot_rows = []
-    for i in range(len(pivot_rows_cols)):
-        if pivot_rows_cols[i] != -10:
-            pivot_rows.append(pivot_rows_cols[i])
-            if big_f0.row_births[pivot_rows_cols[i]] < big_f0.col_births[i]:        # To avoid unimportant bars such as [1,1)
-                bars.append((big_f0.row_births[pivot_rows_cols[i]], big_f0.col_births[i]))
-    non_pivot_rows = list(set(list(range(big_f0.mat.shape[0]))) - set(pivot_rows))
-    for i in non_pivot_rows:
-        bars.append((big_f0.row_births[i], np.inf))
+    
+    bars = read_off_bars(f0_reduced_d, big_f0.col_births, big_f0.row_births, pivot_rows_cols)
     
     print(bars)
     
