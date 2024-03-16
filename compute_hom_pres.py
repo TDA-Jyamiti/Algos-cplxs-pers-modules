@@ -77,13 +77,16 @@ def get_bars_hom_cplx_pres(f0: MatrixWithBirthDeathIdcs, g0: MatrixWithBirthDeat
     
     f0_concat_zero_plus_q_concat_g1_restricted = f0_concat_zero_plus_q_concat_g1[g0_plus_r_ker_cols, :]
       
-    f0_concat_zero_plus_q_concat_g1_restricted_reduced_d, __, ___ = col_redn(f0_concat_zero_plus_q_concat_g1_restricted)
+    f0_concat_zero_plus_q_concat_g1_restricted_reduced_d, __, pivot_rows_cols = col_redn(f0_concat_zero_plus_q_concat_g1_restricted)
     row_degs_f0_concat_zero_plus_q_concat_g1_restricted_reduced = row_degs_f0_concat_zero_plus_q_concat_g1[g0_plus_r_ker_cols]
     
     f0_concat_zero_plus_q_concat_g1_restricted_reduced_r_d = get_dict_from_sparse_mat(get_sparse_matrix_from_dict(
                                                             f0_concat_zero_plus_q_concat_g1_restricted_reduced_d, 
                                                             shape=(len(g0_plus_r_ker_cols), f0_concat_zero_plus_q_concat_g1.shape[1])).tocsr())
     
-    bars = read_off_bars(f0_concat_zero_plus_q_concat_g1_restricted_reduced_r_d, col_degs_f0_concat_zero_plus_q_concat_g1, row_degs_f0_concat_zero_plus_q_concat_g1_restricted_reduced)
+    bars = read_off_bars(f0_concat_zero_plus_q_concat_g1_restricted_reduced_r_d, 
+                         col_degs_f0_concat_zero_plus_q_concat_g1, 
+                         row_degs_f0_concat_zero_plus_q_concat_g1_restricted_reduced,
+                         pivot_rows_cols)
     
     return bars
