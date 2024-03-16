@@ -216,7 +216,7 @@ if __name__ == '__main__':
     n = 0
     for i in range(len(obj_u[0][0])):
         n += obj_u[0][0][i].shape[0]
-    print(f'Input size (summation n_i) is {n*filt_len}')
+    print(f'Input size (summation n_i) is {n*len(graph_edge_list)}')
     
     obj2_u = Parallel(n_jobs=16, verbose=4)(delayed(compute_maps_betn_bars)(obj_u[j][0], obj_u[j][1], obj_u[j][2]) for j in range(len(obj_u)))
     obj2_v = Parallel(n_jobs=16, verbose=4)(delayed(compute_maps_betn_bars)(obj_v[j][0], obj_v[j][1], obj_v[j][2]) for j in range(len(obj_v)))
