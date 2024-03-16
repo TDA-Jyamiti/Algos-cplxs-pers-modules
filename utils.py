@@ -166,7 +166,7 @@ class MatrixWithBirthDeathIdcs:
         self.row_deaths = row_deaths
         self.col_deaths = col_deaths
 
-def read_off_bars(mat_r_d, col_degs, row_degs, pivot_rows_cols):
+def read_off_bars(col_degs, row_degs, pivot_rows_cols):
     bars = []
     pivot_rows = []
     for i in range(len(pivot_rows_cols)):
@@ -174,7 +174,7 @@ def read_off_bars(mat_r_d, col_degs, row_degs, pivot_rows_cols):
             pivot_rows.append(pivot_rows_cols[i])
             if row_degs[pivot_rows_cols[i]] < col_degs[i]:        # To avoid unimportant bars such as [1,1)
                 bars.append((row_degs[pivot_rows_cols[i]], col_degs[i]))
-    non_pivot_rows = list(set(list(range(len(mat_r_d)))) - set(pivot_rows))
+    non_pivot_rows = list(set(list(range(len(row_degs)))) - set(pivot_rows))
     for i in non_pivot_rows:
         bars.append((row_degs[i], np.inf))
     
