@@ -1,6 +1,6 @@
 # Efficient Algorithms for Complexes of Persistence Modules with Applications
 
-This repository contains an implementation of the algorithms proposed in the paper (link).
+This repository contains an implementation of the algorithms proposed in the [paper](https://arxiv.org/abs/2403.10958).
 
 ## Organization of the repository
 
@@ -20,7 +20,7 @@ The repository is organized as follows:
    
 2. scipy
 
-The code has been tested on `numpy 1.24.4` and `scipy 1.8.0`.
+The code has been tested on `numpy 1.24.4` and `scipy 1.8.0`. Any other questions can be addressed to ssamaga@purdue.edu.
 
 ## License
 
